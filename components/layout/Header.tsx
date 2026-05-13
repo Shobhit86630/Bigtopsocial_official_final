@@ -45,11 +45,11 @@ export function Header() {
       <div className="mx-auto flex h-[72px] max-w-content items-center justify-between px-5 sm:h-[80px] sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center text-foreground">
           <Image
-            src="/main.logo.png"
+            src="/logo.png"
             alt="Brand logo"
-            width={100}
+            width={120}
             height={20}
-            className="h-5 w-auto"
+            className="h-8 w-auto"
           />
         </Link>
 
