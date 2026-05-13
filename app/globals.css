@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Design audit — elevon.framer.media (readonly pass)
+  Background: #000000
+  Primary text: #FFFFFF
+  Secondary/muted: ~#888888–#CCCCCC
+  Accent (stars, highlights): warm orange ~#FF8C33 / #FF8C00
+  Surfaces/cards: ~#121212–#1A1A1A (elevated from pure black)
+  Hero: soft radial mesh (orange/amber/yellow) with heavy blur
+  Typography: geometric sans → Inter (weights 400–800)
+  Motion: scroll fade/slide reveals, card hovers, FAQ accordion
+*/
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --muted: #888888;
+  --foreground-soft: #cccccc;
+  --surface: #121212;
+  --surface-elevated: #171717;
+  --border-subtle: #262626;
+  --accent: #ff8c33;
+  --accent-soft: rgba(255, 140, 51, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
