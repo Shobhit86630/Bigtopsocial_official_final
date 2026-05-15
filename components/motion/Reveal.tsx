@@ -19,21 +19,21 @@ export function Reveal({ children, className, delay = 0 }: RevealProps) {
 
   const shouldAnimate = isHydrated && !reduce;
 
+  if (!shouldAnimate) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       className={className}
-      initial={shouldAnimate ? { opacity: 0, y: 24 } : false}
-      whileInView={shouldAnimate ? { opacity: 1, y: 0 } : undefined}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-10% 0px" }}
-      transition={
-        shouldAnimate
-          ? {
-              duration: 0.6,
-              ease: [0.16, 1, 0.3, 1] as const,
-              delay,
-            }
-          : undefined
-      }
+      transition={{
+        duration: 0.6,
+        ease: [0.16, 1, 0.3, 1] as const,
+        delay,
+      }}
     >
       {children}
     </motion.div>

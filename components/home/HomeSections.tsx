@@ -164,10 +164,8 @@ export function HomeSections() {
   </Container>
 </section>
 
-      <section className="relative py-20 sm:py-24">
-
-
-        <Container>
+<section className="relative py-20 sm:py-24">
+      <Container>
           <Reveal>
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted">
               How We Work?
@@ -184,13 +182,15 @@ export function HomeSections() {
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step, idx) => (
               <Reveal key={step.title} delay={idx * 0.06}>
-                <div className="h-full rounded-card border border-white/[0.08] bg-surface/60 p-6">
-                  <h3 className="text-lg font-semibold text-foreground">
-                    {step.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted">
-                    {step.body}
-                  </p>
+                <div className="rounded-card p-px neon-card">
+                  <div className="h-full rounded-[inherit] bg-surface/60 p-6">
+                    <h3 className="text-lg font-semibold text-foreground">
+                      {step.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted">
+                      {step.body}
+                    </p>
+                  </div>
                 </div>
               </Reveal>
             ))}
@@ -270,7 +270,7 @@ export function HomeSections() {
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {services.map((svc, idx) => (
               <Reveal key={svc.title} delay={idx * 0.04}>
-                <div className="h-full rounded-card border border-white/[0.08] bg-surface/50 p-6">
+                <div className="h-full rounded-card border border-white/[0.08] bg-blue p-6">
                   <h3 className="text-lg font-semibold text-foreground">
                     {svc.title}
                   </h3>
