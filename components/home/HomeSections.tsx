@@ -4,6 +4,7 @@ import BorderGlow from "@/components/BorderGlow";
 import { Container } from "@/components/layout/Container";
 import { FaqAccordion } from "@/components/faq/FaqAccordion";
 import { Reveal } from "@/components/motion/Reveal";
+import { WobbleCard } from "@/components/ui/wobble-card";
 import { blogListing } from "@/lib/content/blog";
 import {
   homeBlogTeasers,
@@ -136,12 +137,37 @@ export function HomeSections() {
 
   <Container>
     <Reveal>
-      <Link
-        href="/about"
-        className="absolute bottom-6 left-1/2 z-40 inline-flex -translate-x-1/2 rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md transition hover:border-white/20 hover:bg-black/80"
-      >
-        About
-      </Link>
+<Link
+  href="/about"
+  className="
+    relative -top-10 left-1/2 z-40
+    inline-flex -translate-x-1/2
+    overflow-hidden
+    rounded-full
+    border border-white/10
+    bg-black/70
+    px-6 py-2
+    text-xs font-semibold uppercase tracking-[0.2em]
+    text-foreground/90
+    backdrop-blur-md
+    transition
+    hover:border-white/20
+    hover:bg-black/80
+
+    before:absolute
+    before:left-[12%]
+    before:right-[12%]
+    before:top-0
+    before:h-px
+    before:bg-gradient-to-r
+    before:from-transparent
+    before:via-white/40
+    before:to-transparent
+    before:content-['']
+  "
+>
+  About
+</Link>
       <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted">
         About
       </p>
@@ -230,6 +256,7 @@ export function HomeSections() {
 
       <section className="py-20 sm:py-24">
         <Container>
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
           <Reveal>
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted">
               Portfolio
@@ -246,29 +273,32 @@ export function HomeSections() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {projectTeasers.map((p, idx) => (
               <Reveal key={p.slug} delay={idx * 0.06}>
-                <Link
-                  href={`/project/${p.slug}`}
-                  className="group block overflow-hidden rounded-card border border-white/[0.08] bg-surface/40 transition hover:border-white/20"
-                >
-                  <div className="relative aspect-[16/11] overflow-hidden">
-                    <Image
-                      src={p.image}
-                      alt={p.alt}
-                      fill
-                      className="object-cover transition duration-700 motion-safe:group-hover:scale-[1.03]"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
-                      <h3 className="text-lg font-semibold text-foreground">
-                        {p.title}
-                      </h3>
-                      <span className="text-sm text-foreground/80">{p.year}</span>
+                <Link href={`/project/${p.slug}`} className="group block">
+                  <WobbleCard
+                    containerClassName="h-full rounded-card border border-[#FFFFFF26] bg-surface/40 transition group-hover:border-white/20"
+                    className="!p-0"
+                  >
+                    <div className="relative aspect-[16/11] overflow-hidden">
+                      <Image
+                        src={p.image}
+                        alt={p.alt}
+                        fill
+                        className="object-cover transition duration-700 motion-safe:group-hover:scale-[1.03]"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
+                      <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
+                        <h3 className="text-lg font-semibold text-foreground">
+                          {p.title}
+                        </h3>
+                        <span className="text-sm text-foreground/80">{p.year}</span>
+                      </div>
                     </div>
-                  </div>
+                  </WobbleCard>
                 </Link>
               </Reveal>
             ))}
+          </div>
           </div>
         </Container>
       </section>
@@ -326,18 +356,23 @@ export function HomeSections() {
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
+          <div className="mt-12 grid gap-0.5 md:grid-cols-4">
             {testimonials.map((t, idx) => (
               <Reveal key={t.name} delay={idx * 0.04}>
-                <figure className="h-full rounded-card border border-white/[0.08] bg-surface/50 p-6">
-                  <blockquote className="text-sm leading-relaxed text-foreground/90">
-                    {t.quote}
-                  </blockquote>
-                  <figcaption className="mt-5 text-sm">
-                    <div className="font-semibold text-foreground">{t.name}</div>
-                    <div className="text-muted">{t.role}</div>
-                  </figcaption>
-                </figure>
+                <BorderGlow
+                  {...homeCardGlow}
+                  className="mx-auto aspect-square w-full max-w-[300px] rounded-[25px]"
+                >
+                  <figure className="flex h-full flex-col p-6">
+                    <blockquote className="text-sm leading-relaxed text-foreground/90">
+                      {t.quote}
+                    </blockquote>
+                    <figcaption className="mt-auto pt-6 text-left text-sm">
+                      <div className="font-semibold text-foreground">{t.name}</div>
+                      <div className="text-muted">{t.role}</div>
+                    </figcaption>
+                  </figure>
+                </BorderGlow>
               </Reveal>
             ))}
           </div>
@@ -346,6 +381,7 @@ export function HomeSections() {
 
       <section className="py-20 sm:py-24">
         <Container>
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
           <Reveal>
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted">
               FAQ
@@ -364,14 +400,15 @@ export function HomeSections() {
             </p>
           </Reveal>
 
-          <Reveal className="mt-10 max-w-3xl">
+          <Reveal className="lg:ml-auto lg:w-full lg:max-w-4xl">
             <FaqAccordion />
           </Reveal>
+          </div>
         </Container>
       </section>
 
-<section className="relative py-20 sm:py-24">
-  <Container>
+<section className="relative py-20 sm:py-24 overflow-hidden">
+  <Container className="relative z-10">
     <Reveal>
       <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted">
         Blog and News
@@ -390,10 +427,13 @@ export function HomeSections() {
         const meta = blogListing.find((x) => x.slug === b.slug);
         return (
           <Reveal key={b.slug} delay={idx * 0.06}>
-            <div className="rounded-card p-px neon-card transform-gpu transition-transform duration-500 ease-out motion-safe:hover:scale-[1.03]">
+            <BorderGlow
+              {...homeCardGlow}
+              className="h-full transform-gpu transition-transform duration-500 ease-out motion-safe:hover:scale-[1.03]"
+            >
               <Link
                 href={`/blog/${b.slug}`}
-                className="group block h-full rounded-[inherit] bg-surface/50 p-6"
+                className="group block h-full p-6"
               >
                 <h3 className="text-base font-semibold text-foreground group-hover:text-foreground/90">
                   {b.title}
@@ -404,7 +444,7 @@ export function HomeSections() {
                   </p>
                 )}
               </Link>
-            </div>
+            </BorderGlow>
           </Reveal>
         );
       })}

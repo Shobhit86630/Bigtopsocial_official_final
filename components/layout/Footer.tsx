@@ -55,7 +55,7 @@ export function Footer() {
                   href="mailto:hello@elevon.media"
                   className="mt-2 block text-foreground/90 transition hover:text-foreground"
                 >
-                  hello@elevon.media
+                  bigtopsocial@gmail.com
                 </a>
               </div>
               <div>
