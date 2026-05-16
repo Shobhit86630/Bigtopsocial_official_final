@@ -208,6 +208,41 @@ export function HomeSections() {
   </Container>
 </section>
 
+      <section className="py-20 sm:py-24">
+        <Container>
+          <Reveal>
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted">
+              Our Services
+            </p>
+            <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+              What we master
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">
+              We empower brands to grow, engage, and succeed with clever social
+              tactics and captivating visuals.
+            </p>
+          </Reveal>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {services.map((svc, idx) => (
+              <Reveal key={svc.title} delay={idx * 0.04}>
+                <BorderGlow
+                  {...homeCardGlow}
+                  className="h-full transform-gpu transition-transform duration-500 ease-out motion-safe:hover:scale-[1.03]"
+                >
+                  <div className="h-full p-6">
+                    <h3 className="text-lg font-semibold text-foreground">
+                      {svc.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted">{svc.body}</p>
+                  </div>
+                </BorderGlow>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
 <section className="relative py-20 sm:py-24">
       <Container>
           <Reveal>
@@ -256,7 +291,7 @@ export function HomeSections() {
 
       <section className="py-20 sm:py-24">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
+          <div className="grid gap-10  lg:items-start">
           <Reveal>
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted">
               Portfolio
@@ -303,41 +338,6 @@ export function HomeSections() {
         </Container>
       </section>
 
-      <section className="py-20 sm:py-24">
-        <Container>
-          <Reveal>
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted">
-              Our Services
-            </p>
-            <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-              What we master
-            </h2>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">
-              We empower brands to grow, engage, and succeed with clever social
-              tactics and captivating visuals.
-            </p>
-          </Reveal>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((svc, idx) => (
-              <Reveal key={svc.title} delay={idx * 0.04}>
-                <BorderGlow
-                  {...homeCardGlow}
-                  className="h-full transform-gpu transition-transform duration-500 ease-out motion-safe:hover:scale-[1.03]"
-                >
-                  <div className="h-full p-6">
-                    <h3 className="text-lg font-semibold text-foreground">
-                      {svc.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-muted">{svc.body}</p>
-                  </div>
-                </BorderGlow>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
 
 
       <section className="py-20 sm:py-24">
@@ -363,13 +363,22 @@ export function HomeSections() {
                   {...homeCardGlow}
                   className="mx-auto aspect-square w-full max-w-[300px] rounded-[25px]"
                 >
-                  <figure className="flex h-full flex-col p-6">
-                    <blockquote className="text-sm leading-relaxed text-foreground/90">
+                  <figure className="relative flex h-full flex-col overflow-hidden rounded-[inherit] p-6">
+                    {t.bgImage ? (
+                      <Image
+                        src={t.bgImage}
+                        alt={`${t.name} testimonial background`}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 300px"
+                      />
+                    ) : null}
+                    <blockquote className="relative z-10 text-sm leading-relaxed text-foreground [text-shadow:0_2px_10px_rgba(0,0,0,0.7)]">
                       {t.quote}
                     </blockquote>
-                    <figcaption className="mt-auto pt-6 text-left text-sm">
+                    <figcaption className="relative z-10 mt-auto pt-6 text-left text-sm [text-shadow:0_2px_10px_rgba(0,0,0,0.7)]">
                       <div className="font-semibold text-foreground">{t.name}</div>
-                      <div className="text-muted">{t.role}</div>
+                      <div className="text-foreground/85">{t.role}</div>
                     </figcaption>
                   </figure>
                 </BorderGlow>

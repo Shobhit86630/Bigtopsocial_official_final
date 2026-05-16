@@ -27,36 +27,45 @@ export const testimonials = [
       "Refined our brand & increased inbound leads by 70% in just a few months.",
     name: "Sarah Ahmed",
     role: "MD, BrightLabs",
+    bgImage:
+      "/image.png",
   },
   {
     quote:
       "Their team understood our vision and delivered campaigns that drove real growth.",
     name: "Daniel Foster",
     role: "Founder, ScaleForge",
+
   },
   {
     quote:
       "Cut acquisition costs by 40% & doubled qualified leads with Elevon’s strategy.",
     name: "Emily Carter",
     role: "CTO, TechFlow Inc",
+    bgImage:
+      "/image.png",
   },
   {
     quote:
       "From creative to performance, everything was handled with clarity and precision.",
     name: "Michael Reed",
     role: "CMO, UrbanEdge",
+
   },
   {
     quote:
       "Elevon helped us scale faster with smarter strategy and stronger creative execution.",
     name: "Olivia Grant",
     role: "Co-Founder, Thrive",
+
   },
   {
     quote:
       "Our engagement and conversions improved significantly within weeks of launching with Elevon.",
     name: "Ryan Mitchell",
     role: "MD, GreenSupply",
+    bgImage:
+      "/image.png",
   },
 ] as const;
 
