@@ -44,13 +44,9 @@ export function Header() {
     <header className={`fixed inset-x-0 top-0 z-50 bg-transparent border-white/[0.06] backdrop-blur-xl transition-transform duration-300 ease-out ${visible ? "translate-y-0" : "-translate-y-full"}`}>
       <div className="mx-auto flex h-[72px] max-w-content items-center justify-between px-5 sm:h-[80px] sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center text-foreground">
-          <Image
-            src="/logo.png"
-            alt="Brand logo"
-            width={120}
-            height={20}
-            className="h-8 w-auto"
-          />
+          <span className="text-xl font-semibold tracking-[0.05em] uppercase text-white">
+            BIGTOPSOCIAL
+          </span>
         </Link>
 
         <NavLinks className="hidden lg:block" />
@@ -58,9 +54,9 @@ export function Header() {
         <div className="flex items-center gap-4">
           <Link
             href="/contact"
-            className="hidden text-sm font-semibold text-foreground transition hover:text-foreground/80 lg:inline"
+            className="hidden text-sm text-foreground transition hover:text-foreground/80 lg:inline"
           >
-            Let&apos;s Grow
+            Let&apos;s Connect
           </Link>
           <button
             type="button"

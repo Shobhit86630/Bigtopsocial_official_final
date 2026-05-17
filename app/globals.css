@@ -15,7 +15,7 @@
 */
 
 :root {
-  --background:#00000a;
+  --background: #050505;
   --foreground: #ffffff;
   --muted: #888888;
   --foreground-soft: #cccccc;
@@ -64,7 +64,7 @@ body {
   contain: layout paint style;
   transform: translateZ(0);
   backface-visibility: hidden;
-  perspective: 1000px;
+  perspective: 800px;
 }
 
 .neon-card {

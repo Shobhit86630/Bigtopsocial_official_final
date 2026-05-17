@@ -16,7 +16,7 @@ export function NavLinks({
 }) {
   return (
     <nav className={className}>
-      <ul className="flex flex-col gap-6 text-[15px] font-medium text-foreground/90 sm:flex-row sm:items-center sm:gap-10 sm:text-sm">
+      <ul className="flex flex-col gap-6 text-[15px] text-foreground/90 sm:flex-row sm:items-center sm:gap-10 sm:text-sm">
         {links.map((l) => (
           <li key={l.href}>
             <Link

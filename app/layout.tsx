@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import "@/components/BorderGlow.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+const helveticaNeue = localFont({
+  src: "../public/helvetica-neue-5/HelveticaNeueMedium.otf",
+  variable: "--font-helvetica-neue",
   display: "swap",
+  weight: "200"
 });
 
 export const metadata: Metadata = {
@@ -33,7 +34,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={helveticaNeue.variable}>
       <body className="min-h-screen bg-background font-sans antialiased">{children}</body>
     </html>
   );

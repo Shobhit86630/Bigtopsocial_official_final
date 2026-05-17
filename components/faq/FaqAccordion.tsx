@@ -27,7 +27,7 @@ export function FaqAccordion() {
               onClick={() => setOpen(isOpen ? null : i)}
               aria-expanded={isOpen}
             >
-              <span className="text-sm font-semibold text-foreground sm:text-base">
+              <span className="text-sm text-foreground sm:text-base">
                 {item.question}
               </span>
               <span className="text-lg text-muted transition group-hover:text-foreground">

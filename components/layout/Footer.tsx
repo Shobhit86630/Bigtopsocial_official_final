@@ -38,7 +38,7 @@ export function Footer() {
 
           <div className="grid gap-10 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-3">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground/80">
+              <p className="text-xs uppercase tracking-[0.2em] text-foreground/80">
                 Navigate
               </p>
               <div className="mt-4">
@@ -48,7 +48,7 @@ export function Footer() {
 
             <div className="space-y-6">
               <div>
-                <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground/80">
+                <h3 className="text-xs  uppercase tracking-[0.2em] text-foreground/80">
                   Email
                 </h3>
                 <a
@@ -59,7 +59,7 @@ export function Footer() {
                 </a>
               </div>
               <div>
-                <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground/80">
+                <h3 className="text-xs uppercase tracking-[0.2em] text-foreground/80">
                   Phone
                 </h3>
                 <a
@@ -73,10 +73,10 @@ export function Footer() {
 
             <div className="space-y-6">
               <div>
-                <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground/80">
+                <h3 className="text-xs  uppercase tracking-[0.2em] text-foreground/80">
                   Location
                 </h3>
-                <p className="mt-2 text-sm font-semibold text-foreground">
+                <p className="mt-2 text-sm text-foreground">
                   Elevon Studio
                 </p>
                 <p className="mt-1 max-w-xs leading-relaxed text-foreground/80">
@@ -84,7 +84,7 @@ export function Footer() {
                 </p>
               </div>
               <div>
-                <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground/80">
+                <h3 className="text-xs uppercase tracking-[0.2em] text-foreground/80">
                   Social
                 </h3>
                 <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2">
@@ -114,7 +114,7 @@ export function Footer() {
               rel="noreferrer"
               className="text-foreground/80 transition hover:text-foreground"
             >
-              © 2026 Elevon Studio
+              © 2026 BIGTOPSOCIAL
             </a>
             <Link
               href="/terms-conditions"
@@ -129,15 +129,6 @@ export function Footer() {
               Privacy Policy
             </Link>
           </div>
-          <a
-            href="https://www.framer.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="max-w-md text-[11px] leading-snug text-white/90 transition hover:text-foreground/80"
-          >
-            Create a free website with Framer, the website builder loved by
-            startups, designers and agencies.
-          </a>
         </div>
       </Container>
     </footer>

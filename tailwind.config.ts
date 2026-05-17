@@ -17,7 +17,7 @@ const config: Config = {
         "accent-soft": "var(--accent-soft)",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        sans: ["var(--font-helvetica-neue)", "system-ui", "sans-serif"],
       },
       maxWidth: {
         content: "1200px",
